@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from fila_de_banco.views import fila
+from fila_de_banco.views import AgregarD
 from PlatziClean.views import PlatziClean
 from PlatziData.views import PlatziData
 from django.shortcuts import render
@@ -24,9 +25,10 @@ def inicio(request):
     return render(request,'inicio.html',{});
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', inicio),
     path('Banco', fila),
     path('Clean', PlatziClean),
     path('Data', PlatziData),
+    path('AgregarD', AgregarD),
 ]

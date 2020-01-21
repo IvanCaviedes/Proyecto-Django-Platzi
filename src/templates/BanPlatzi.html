@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,6 +16,7 @@
             height: 100%;
             background-color: rgb(39, 60, 63);
         }
+
         .bd-placeholder-img {
             font-size: 1.125rem;
             text-anchor: middle;
@@ -23,6 +25,7 @@
             -ms-user-select: none;
             user-select: none;
         }
+
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
@@ -30,6 +33,7 @@
         }
     </style>
 </head>
+
 <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <header class="masthead mb-auto">
@@ -45,13 +49,76 @@
         </header>
         <main role="main" class="inner cover">
             <h1 class="cover-heading">Bienvenido a BanPlatzi</h1>
-            <form action="" method="POST">
-                {% csrf_token %}
-                {{form}}
+            <form action="AgregarD">
+                <div class="row p-1">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Fila Depocito" name="text">
+                    </div>
+                    <div class="col">
+                        <button class="btn w-100" type="submit" value="Click" name="PrimerBoton"
+                            style="background-color: rgb(49, 126, 138);">Agregar Depocito</button>
+                    </div>
+                </div>
             </form>
+            <form action="AgregarD">
+                <div class="row p-1">
+                    <div class="col-6">
+                        <input type="text" class="form-control" placeholder="Fila Apertura de cuenta" name="text">
+                    </div>
+                    <div class="col-6">
+                        <button class="btn w-100" type="submit" value="Click" name="SegundoBoton"
+                            style="background-color: rgb(49, 126, 138);">Agregar Apertura de Cuenta</button>
+                    </div>
+                </div>
+            </form>
+            <form action="AgregarD" class="form-inline p-1">
+                <button class="btn w-100" type="submit" value="Click" name="TercerBoton"
+                    style="background-color: rgb(49, 126, 138);">Atender Clientes</button>
+            </form>
+            <form action="AgregarD" class="form-inline p-1">
 
-            <h2>{{salida}}</h2>
+                <button class="btn w-100" type="submit" value="Click" name="Cuartoboton"
+                    style="background-color: rgb(49, 126, 138);">Listar Clientes</button>
+            </form>
         </main>
+
+        <h6>{{mensaje}}</h6>
+        {% if mostrar == True %}
+        <div class="row">
+            <div class="col-6">
+                <table class="table text-white">
+                    <thead>
+                        <tr>
+                            <th scope="col">Fila Depocito</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for o in fila %}
+                        <tr>
+                            <td>{{o}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-6">
+                <table class="table text-white">
+                    <thead>
+                        <tr>
+                            <th scope="col">Fila Apertura de cuenta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for o in fila2 %}
+                        <tr>
+                            <td>{{o}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endif %}
         <footer class="mastfoot mt-auto">
             <div class="inner">
                 <p>Diseño inspirado en <a href="https://getbootstrap.com/">Bootstrap</a>,Por <a
@@ -66,4 +133,5 @@
             crossorigin="anonymous"></script>
     </div>
 </body>
+
 </html>
