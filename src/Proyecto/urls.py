@@ -20,6 +20,7 @@ from fila_de_banco.views import AgregarD
 from PlatziClean.views import PlatziClean
 from PlatziClean.views import AgregarP
 from PlatziData.views import PlatziData
+from PlatziData.views import AgregarL
 from django.shortcuts import render
 
 def inicio(request):
@@ -33,4 +34,5 @@ urlpatterns = [
     path('Data', PlatziData),
     path('AgregarD', AgregarD),
     path('AgregarP', AgregarP),
+    path('AgregarL', AgregarL),
 ]

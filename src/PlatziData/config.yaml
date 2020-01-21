@@ -1,0 +1,25 @@
+news_sites:
+  eluniversal:
+    url: http://www.eluniversal.com.mx
+    queries:
+      homepage_article_links: '.field-content a'
+      article_body: '.field-name-body'
+      article_title: '.pane-content h1'
+  elpais:
+    url: https://elpais.com
+    queries:
+      homepage_article_links: '.articulo-titulo a'
+      article_body: '.articulo-cuerpo'
+      article_title: '.articulo-titulo'
+  eltiempo:
+    url: https://www.eltiempo.com/
+    queries:
+      homepage_article_links: '.title-container a'
+      article_body: '.contenido'
+      article_title: '.titulo-principal-bk h1'
+  elpublimetro:
+    url: https://www.publimetro.co/co/
+    queries:
+      homepage_article_links: '.tit a'
+      article_body: '.resumen'
+      article_title: '.article-header h1'

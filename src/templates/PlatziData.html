@@ -59,24 +59,45 @@
             </div>
         </header>
 
-
         <main role="main" class="inner cover">
             <h1 class="cover-heading">Bienvenido a <a href="#" data-toggle="modal"
                     data-target=".bd-example-modal-lg"><b><u>PlatziData</u></b></a></h1>
 
-
+            <div class="row">
+                <ul class="list-group list-group-horizontal text-dark mx-auto">
+                    {% for o in sitios %}
+                    <li class="list-group-item">{{o}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <br>
             <form action="AgregarL">
                 <div class="row p-1">
-                    <input type="text" class="form-control" placeholder="Periodico a escanear" name="text" required>
+                    <input type="text" class="form-control text-center" placeholder="selecione periodico de la lista"
+                        name="text" required>
                 </div>
                 <div class="row p-1">
                     <button class="btn w-100" type="submit" value="Click" name="PrimerBoton"
-                        style="background-color: rgb(129, 81, 81); color: rgb(223, 222, 222);">Periodico a scanear?</button>
+                        style="background-color: rgb(129, 81, 81); color: rgb(223, 222, 222);">Periodico a
+                        scanear?</button>
                 </div>
             </form>
         </main>
 
+        {% if mensaje == True %}
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="alert-heading">Muy bien!</h4>
+            <p>La pagina fue escaneada correctamente y el documento guardado en la carpeta raiz del proyecto</p>
+            <hr>
+            <p class="mb-0">Este documento consta de un titulo y un cuerpo de una noticia, en el cual esta toda la
+                información de la loticia que fue sacada de la pagina</p>
+            <a href=""></a>
 
+        </div>
+        {% endif %}
 
         <div class="modal fade bd-example-modal-lg text-dark" tabindex="-1" role="dialog"
             aria-labelledby="myLargeModalLabel" aria-hidden="true">
