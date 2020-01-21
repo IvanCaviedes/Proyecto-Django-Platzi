@@ -22,9 +22,36 @@ def AgregarD(request):
 
     if(request.GET.get('TercerBoton')):
         mostrar = False
-        mensaje = 'tercer boton'
 
+        if 0 == len(Fila1) and 0 == len(Fila2):
+            mensaje = "Filas vacias por favor ingrese datos"
+        elif 0 == len(Fila1) and 0<len(Fila2):
+            cont =0
+            while 0<len(Fila2):
+                cont+=1
+                Fila2.pop(0)       
+            mensaje = f'Usuarios atendidos de la fila Apertura {cont}'
 
+        elif 0<len(Fila1) and 0 ==len(Fila2):
+            cont =0
+            while 0<len(Fila1):
+                cont+=1
+                Fila1.pop(0)       
+            mensaje = f'Usuarios atendidos de la fila Deposito {cont}'
+        elif 0 < len(Fila1) and 0 < len(Fila2):
+            hola = True
+            cont = 0
+            cont1 = 0
+            while hola:
+                if 0<len(Fila1):
+                    cont+=1
+                    Fila1.pop(0)
+                elif 0<len(Fila2):
+                    cont1+=1
+                    Fila2.pop(0)
+                else:
+                    mensaje = f'se han atendido los clientes de las dos filas, fila Depocito {cont} clientes y fila Apertura {cont1} clientes'
+                    hola = False       
 
     if(request.GET.get('Cuartoboton')):
         mostrar = True

@@ -7,9 +7,6 @@
     <title>Proyecto Platzi</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
     <link href="https://getbootstrap.com/docs/4.4/examples/cover/cover.css" rel="stylesheet">
     <style>
         body {
@@ -33,6 +30,7 @@
         }
     </style>
 </head>
+
 <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <header class="masthead mb-auto">
@@ -47,8 +45,114 @@
             </div>
         </header>
         <main role="main" class="inner cover">
-            <h1 class="cover-heading">Bienvenido a PlatziClean</h1>
+            <h1 class="cover-heading">Bienvenido a <a href="#" data-toggle="modal"
+                    data-target=".bd-example-modal-lg"><b><u>PlatziClean</u></b></a></h1>
+
+
+            <form action="AgregarP">
+                <div class="row p-1">
+                    <div class="col-6">
+                        <input type="text" class="form-control" placeholder="Fila Platos" name="text" required>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn w-100" type="submit" value="Click" name="PrimerBoton"
+                            style="background-color: rgb(113, 79, 128); color: rgb(223, 222, 222);">Agregar
+                            Plato</button>
+                    </div>
+                </div>
+            </form>
+
+            <form action="AgregarP">
+                <div class="row p-1">
+                    <div class="col-6">
+                        <button class="btn w-100" type="submit" value="Click" name="SegundoBoton"
+                            style="background-color: rgb(113, 79, 128); color: rgb(223, 222, 222);">Lavar Todos</button>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn w-100" type="submit" value="Click" name="TercerBoton"
+                            style="background-color: rgb(113, 79, 128); color: rgb(223, 222, 222);">Lavar el
+                            Ultimo</button>
+                    </div>
+                </div>
+            </form>
+            <form action="AgregarP" class="form-inline p-1">
+
+                <button class="btn w-100" type="submit" value="Click" name="Cuartoboton"
+                    style="background-color: rgb(113, 79, 128); color: rgb(223, 222, 222);">Listar Platos</button>
+            </form>
+
         </main>
+        <h6>{{mensaje}}</h6>
+        {% if mostrar == True %}
+        <div class="row">
+            <div class="col">
+                <table class="table text-white">
+                    <thead>
+                        <tr>
+                            <th scope="col">Fila de Platos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for o in fila %}
+                        <tr>
+                            <td>{{o}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="modal fade bd-example-modal-lg text-dark" tabindex="-1" role="dialog"
+            aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ejercicio 2: Robot lavaplatos</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h6>Descripcion</h6>
+                        <p>PlatziClean, una nueva startup que está desarrollando un robot para lavar trastes en
+                            restaurantes, desea crear un algoritmo para programar dicho robot. El robot sólo puede lavar
+                            un plato a la vez y únicamente puede lavar los platos que se encuentren hasta arriba de la
+                            pila. El robot continúa lavando platos hasta que se le da la instrucción de que termine. El
+                            problema es que si trata de lavar un plato cuando ya no quedan más, destruye el lavabo del
+                            cliente.
+                        </p>
+                        <hr>
+                        <h6>Objetivo</h6>
+                        <p>Crea un programa de CLI que pueda añadir platos a la pila de trastes y que dé instrucciones
+                            de que se debe lavar un plato. Después de cada instrucción el robot debe verificar si quedan
+                            platos en la pila y anunciar el número de platos restantes.</p>
+                        <hr>
+                        <h6>Instrucciones</h6>
+                        <p>
+                            <ol type="1">
+                                <li class="text-left">Crea un archivo llamado robot_lavaplatos.py.</li>
+                                <li class="text-left">Crea una interfaz de CLI que permita ingresar los siguiente
+                                    comandos:
+                                </li>
+                                <ol class="text-left" type="A">
+                                    <li>Agregar plato al lavabo</li>
+                                    <li>Agregar lavar plato</li>
+                                    <li>Listar platos en la pila</li>
+                                </ol>
+                                <li class="text-left">En caso de que se ejecute el comando lavar platos cuando ya no
+                                    quedan platos en la pila, el lavabo se rompe y ya no se deberán poder lavar platos o
+                                    agregar platos.</li>
+                            </ol>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <footer class="mastfoot mt-auto">
             <div class="inner">
                 <p>Diseño inspirado en <a href="https://getbootstrap.com/">Bootstrap</a>,Por <a
@@ -58,9 +162,13 @@
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
             crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
             integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
             crossorigin="anonymous"></script>
     </div>
 </body>
+
 </html>

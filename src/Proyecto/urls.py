@@ -18,11 +18,12 @@ from django.urls import path
 from fila_de_banco.views import fila
 from fila_de_banco.views import AgregarD
 from PlatziClean.views import PlatziClean
+from PlatziClean.views import AgregarP
 from PlatziData.views import PlatziData
 from django.shortcuts import render
 
 def inicio(request):
-    return render(request,'inicio.html',{});
+    return render(request,'inicio.html',{})
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,4 +32,5 @@ urlpatterns = [
     path('Clean', PlatziClean),
     path('Data', PlatziData),
     path('AgregarD', AgregarD),
+    path('AgregarP', AgregarP),
 ]

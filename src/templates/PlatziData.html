@@ -21,9 +21,6 @@
     <title>Proyecto Platzi</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
     <link href="https://getbootstrap.com/docs/4.4/examples/cover/cover.css" rel="stylesheet">
     <style>
         body {
@@ -61,9 +58,68 @@
                 </nav>
             </div>
         </header>
+
+
         <main role="main" class="inner cover">
-            <h1 class="cover-heading">Bienvenido a PlatziData</h1>
+            <h1 class="cover-heading">Bienvenido a <a href="#" data-toggle="modal"
+                    data-target=".bd-example-modal-lg"><b><u>PlatziData</u></b></a></h1>
+
+
+            <form action="AgregarL">
+                <div class="row p-1">
+                    <input type="text" class="form-control" placeholder="Periodico a escanear" name="text" required>
+                </div>
+                <div class="row p-1">
+                    <button class="btn w-100" type="submit" value="Click" name="PrimerBoton"
+                        style="background-color: rgb(129, 81, 81); color: rgb(223, 222, 222);">Periodico a scanear?</button>
+                </div>
+            </form>
         </main>
+
+
+
+        <div class="modal fade bd-example-modal-lg text-dark" tabindex="-1" role="dialog"
+            aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ejercicio 3: Análisis de datos</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h6>Descripcion</h6>
+                        <p>PlatziData, una nueva startup dedicada al análisis de tendencias noticiosas está
+                            desarrollando un nuevo producto que pueda comparar el promedio de palabras que utiliza cada
+                            medio periódico online para determinar cuál es su línea editorial. Esta información obtiene
+                            hoy en día de manera manual, pero desean aumentar el número de periódicos que pueden
+                            analizar de manera diaria.
+                        </p>
+                        <hr>
+                        <h6>Objetivo</h6>
+                        <p>Crea un programa que pueda automatizar la labor de extracción de la información de los
+                            periódicos, la limpie y estandarice, y la guarde en un archivo CSV para que se la puedan
+                            entregar a sus clientes.</p>
+                        <hr>
+                        <h6>Instrucciones</h6>
+                        <p>
+                            <ol type="1">
+                                <li class="text-left">Crea un archivo llamado analisis_de_datos.py.</li>
+                                <li class="text-left">scoge 2 sitios web de periódicos para extraer sus datos</li>
+                                <li class="text-left">Crea un pipeline de extracción de datos</li>
+                                <li class="text-left">Realiza un dump de los datos a un archivo csv llamado
+                                    resultados.csv</li>
+                            </ol>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <footer class="mastfoot mt-auto">
             <div class="inner">
                 <p>Diseño inspirado en <a href="https://getbootstrap.com/">Bootstrap</a>,Por <a
@@ -72,6 +128,9 @@
         </footer>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
             integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
